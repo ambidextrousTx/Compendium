@@ -9,8 +9,7 @@ import java.util.Date;
  * in the system
  *
  */
-public class Software {
-	private boolean installed;
+public abstract class Software {
 	private boolean moved;
 	
 	private String name;
@@ -19,11 +18,8 @@ public class Software {
 	
 	private Date downloadDate;
 	private Path location;
-
+	
 	// Getters
-	public boolean isInstalled() {
-		return installed;
-	}
 	public boolean isMoved() {
 		return moved;
 	}
@@ -44,6 +40,7 @@ public class Software {
 	}
 	
 	// hashCode() and equals()
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -52,7 +49,6 @@ public class Software {
 				+ ((description == null) ? 0 : description.hashCode());
 		result = prime * result
 				+ ((downloadDate == null) ? 0 : downloadDate.hashCode());
-		result = prime * result + (installed ? 1231 : 1237);
 		result = prime * result
 				+ ((location == null) ? 0 : location.hashCode());
 		result = prime * result + (moved ? 1231 : 1237);
@@ -60,6 +56,7 @@ public class Software {
 		result = prime * result + ((remarks == null) ? 0 : remarks.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -78,8 +75,6 @@ public class Software {
 			if (other.downloadDate != null)
 				return false;
 		} else if (!downloadDate.equals(other.downloadDate))
-			return false;
-		if (installed != other.installed)
 			return false;
 		if (location == null) {
 			if (other.location != null)
@@ -100,5 +95,4 @@ public class Software {
 			return false;
 		return true;
 	}
-
 }
