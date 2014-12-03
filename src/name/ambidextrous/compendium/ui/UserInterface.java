@@ -1,5 +1,6 @@
 package name.ambidextrous.compendium.ui;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,7 +20,9 @@ public class UserInterface implements ActionListener {
 		button = new JButton();
 		button.addActionListener(this);
 		button.setText("Click me!");
-		frame.getContentPane().add(button);
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(BorderLayout.CENTER, button);
 		
 		frame.setSize(800, 600);
 		frame.setVisible(true);
