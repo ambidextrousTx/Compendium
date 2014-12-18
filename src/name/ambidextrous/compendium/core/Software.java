@@ -1,5 +1,6 @@
 package name.ambidextrous.compendium.core;
 
+import java.io.Serializable;
 import java.nio.file.Path;
 import java.util.Date;
 
@@ -9,7 +10,9 @@ import java.util.Date;
  * in the system
  *
  */
-public abstract class Software {
+public abstract class Software implements Serializable {
+	private static final long serialVersionUID = -6412858596220642998L;
+
 	private boolean moved;
 	
 	private String name;
