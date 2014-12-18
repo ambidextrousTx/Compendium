@@ -1,5 +1,7 @@
 package name.ambidextrous.compendium.frontend;
 
+import name.ambidextrous.compendium.core.InstalledSoftware;
+
 
 /**
  * @author ambidextrous
@@ -13,6 +15,7 @@ public class Cataloger {
 	}
 	
 	private void go() {
+		InstalledSoftware installedSoftware = new InstalledSoftware();
 		
 		
 	}

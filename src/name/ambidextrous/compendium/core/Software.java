@@ -13,14 +13,14 @@ import java.util.Date;
 public abstract class Software implements Serializable {
 	private static final long serialVersionUID = -6412858596220642998L;
 
-	private boolean moved;
+	protected boolean moved;
 	
-	private String name;
-	private String remarks;
-	private String description;
+	protected String name;
+	protected String remarks;
+	protected String description;
 	
-	private Date downloadDate;
-	private Path location;
+	protected Date downloadDate;
+	protected Path location;
 	
 	// Getters
 	public boolean isMoved() {
