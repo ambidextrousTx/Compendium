@@ -10,7 +10,6 @@ import java.nio.file.Path;
 import java.util.Date;
 
 import name.ambidextrous.compendium.core.InstalledSoftware;
-import name.ambidextrous.compendium.core.Software;
 
 /**
  * @author ambidextrous Allows a user to add an entry to the catalog
@@ -31,23 +30,23 @@ public class Cataloger {
 
 	}
 	
-	private void catalog(Software software) {
+	private void catalog(InstalledSoftware software) {
 		FileOutputStream foutStream;
 		try {
 			foutStream = new FileOutputStream(new File("Catalog.ser"));
 			ObjectOutputStream outStream = new ObjectOutputStream(foutStream);
 			outStream.writeObject(software);
+			outStream.flush();
 			outStream.close();
+			foutStream.close();
 			System.out.println("Serialized the object");
 			
 		} catch (FileNotFoundException e) {
 			System.out.println("Could not find the catalog file");
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("Input/Output error");
+			System.out.println("Could not serialize the object");
 			e.printStackTrace();
 		}
-		
 	}
-
 }
