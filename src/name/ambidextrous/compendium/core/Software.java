@@ -19,8 +19,8 @@ public abstract class Software implements Serializable {
 	protected String remarks;
 	protected String description;
 	
-	protected Date downloadDate;
-	protected Path location;
+	protected transient Date downloadDate;
+	protected transient Path location;
 	
 	// Getters
 	public boolean isMoved() {
